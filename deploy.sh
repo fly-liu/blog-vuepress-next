@@ -9,8 +9,8 @@ npm run docs:build
 # 进入生成的文件夹
 cd .vuepress/dist
 
-git init
-git add -A
+git init -b main
+git add .
 git commit -m 'deploy blog'
 git push -f https://github.com/fly-liu/blog-vuepress-next.git main
 cd -
