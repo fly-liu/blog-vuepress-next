@@ -17,7 +17,7 @@ npm run docs:build
 :::
 
 # 项目地址
-`https://github.com/fly-liu/blog-project.git`
+`https://github.com/fly-liu/blog-vuepress-next`
 
 # 项目部署
 

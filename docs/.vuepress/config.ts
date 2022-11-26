@@ -6,7 +6,8 @@ import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
 import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
-import { commentPlugin } from "vuepress-plugin-comment2";
+import { commentPlugin } from 'vuepress-plugin-comment2'
+import { sitemapPlugin } from 'vuepress-plugin-sitemap2'
 import pagePlugin from './plugins/page'
 
 export default defineUserConfig({
@@ -39,11 +40,11 @@ export default defineUserConfig({
     }
   },
   theme: defaultTheme({
-    repo: "https://github.com/fly-liu/blog-project", // github链接
+    repo: 'https://github.com/fly-liu/blog-vuepress-next', // github链接
     logo: 'https://ae01.alicdn.com/kf/Hf2c1a9a9686148debc15f0b0ac1fea85a.jpg', // 博客的 logo
     // 导航菜单
     navbar: [
-      { text: "文章", link: '/list/' },
+      { text: '文章', link: '/list/' },
       { text: '后端', link: '/serve/' },
       // { 
       //   text: '后端', 
@@ -111,8 +112,8 @@ export default defineUserConfig({
       },
       hotKeys: [
         {
-          "key": "k",
-          "ctrl": true,
+          'key': 'k',
+          'ctrl': true,
         }
       ],
       maxSuggestions: 10, // 搜索结果的最大条数
@@ -140,7 +141,16 @@ export default defineUserConfig({
 
     // 评论插件
     commentPlugin({
-      // 插件选项
+      provider: 'Giscus',
+      repo: 'fly-liu/blog-vuepress-next',
+      repoId: 'R_kgDOIgVEtw',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOIgVEt84CSw-w',
+    }),
+
+    // sitmap 配置
+    sitemapPlugin({
+      hostname: 'https://fly-liu.github.io/blog-vuepress-next/'
     }),
   ],
 })
