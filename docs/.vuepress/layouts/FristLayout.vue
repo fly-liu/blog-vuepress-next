@@ -16,10 +16,12 @@ const worksList = ref([
       {
         src: 'https://ae01.alicdn.com/kf/Hd347065ad4a2401ebab0e14a2962659dE.jpg',
         alt: '消防巡检1'
-      },{
-        src: 'https://ae01.alicdn.com/kf/H2a0345cfa303429fac83eb76cbe403ab8.jpg',
-        alt: '消防巡检2'
-      },{
+      },
+      // {
+      //   src: 'https://ae01.alicdn.com/kf/H2a0345cfa303429fac83eb76cbe403ab8.jpg',
+      //   alt: '消防巡检2'
+      // },
+      {
         src: 'https://ae01.alicdn.com/kf/Ha406f731286e44cb8e7186d01ce2d6b8w.jpg',
         alt: '消防巡检3'
       },

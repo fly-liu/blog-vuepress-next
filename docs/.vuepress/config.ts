@@ -16,7 +16,7 @@ export default defineUserConfig({
   description: '记录 笔记 博客 git', // 网站描述
   // 被注入页面 HTML <head> 额外的标签
   head: [
-    ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['link', { rel: 'icon', href: `https://ae01.alicdn.com/kf/Hf2c1a9a9686148debc15f0b0ac1fea85a.jpg` }],
     ['meta', { name: 'google', value: 'notranslate' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
