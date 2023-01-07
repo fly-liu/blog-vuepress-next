@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
 import { getTagCount } from '../utils/utils.js'
 
 const props = defineProps({
