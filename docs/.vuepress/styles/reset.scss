@@ -1,10 +1,12 @@
 :root {
   --item-decorate-color: #fff;
+  --frist-text-color: #fff;
   --filter-invert-value: invert(0); // 滤镜反色值
 }
 
 html.dark {
   --item-decorate-color: #333;
+  --frist-text-color: #adbac7;
   --filter-invert-value: invert(100%); // 滤镜反色值
 }
 

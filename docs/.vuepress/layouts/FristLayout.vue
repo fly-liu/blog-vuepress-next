@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { withBase } from '@vuepress/client'
 import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
+import BgroundBox from './components/BgroundBox.vue'
+
 import { 
   ref,
   onMounted,
   onUnmounted
 } from 'vue'
 // import BigImg from './components/BigImg.vue';
-// import NavbarLayout from "@theme/layouts/Layout.vue";
 
 // const showImg = ref(false)
 // const imgSrc = ref('')
@@ -84,14 +85,28 @@ const worksList = ref([
   }
 ])
 
-onMounted(() => {
-  setMainHeight()
-  window.addEventListener('resize', setMainHeight, false);
-})
+// onMounted(() => {
+//   setMainHeight()
+//   window.addEventListener('resize', setMainHeight, false);
+// })
 
-onUnmounted(() => {
-  window.removeEventListener('resize', setMainHeight, false)
-})
+// onUnmounted(() => {
+//   window.removeEventListener('resize', setMainHeight, false)
+// })
+
+// function setMainHeight() {
+//   const navbar = document.querySelector('.navbar') as HTMLImageElement
+//   const slide1 = document.querySelector(".slide-1") as HTMLImageElement
+//   const offsetHeight = navbar ? navbar.offsetHeight : 0
+//   let wH = window.innerHeight; // 当前窗口的高度
+//   let mainHeight = wH - offsetHeight;
+  
+//   if(slide1) {
+//     slide1.style.height = mainHeight + "px";
+//   }
+  
+//   return mainHeight;
+// }
 
 // function toggleView(e) {
 //   showImg.value = true
@@ -102,211 +117,195 @@ onUnmounted(() => {
 // function viewImg() {
 //   showImg.value = false
 // }
-
-function setMainHeight() {
-  const navbar = document.querySelector('.navbar') as HTMLImageElement
-  const slide1 = document.querySelector(".slide-1") as HTMLImageElement
-  const offsetHeight = navbar ? navbar.offsetHeight : 0
-  let wH = window.innerHeight; // 当前窗口的高度
-  let mainHeight = wH - offsetHeight;
-  
-  if(slide1) {
-    slide1.style.height = mainHeight + "px";
-  }
-  
-  return mainHeight;
-}
 </script>
 
 <template>
   <ParentLayout>
     <template #page>
       <section class="home-box scrollbar">
-        <div class="home-container">
-          <div class="home-wrapper">
-            <div class="home-slide slide-1">
-              <div class="bg"></div>
-              <div class="main">
-                <h1 class="text-shadow">Hello World</h1>
-                <p>就从这句开始吧</p>
-              </div>
-              <div class="button-list">
-                <img
-                  class="box-shadow"
-                  :src="withBase('/imgs/zAo2nK.png')"
-                  alt="个人图标"
-                />
-                <button class="box-shadow" @click="$router.push('/about/')">About</button>
-                <button class="box-shadow" @click="$router.push('/tags/')">Tags</button>
+        <div class="home-slide slide-1">
+          <BgroundBox></BgroundBox>
+
+          <div class="main">
+            <h1>Hello World</h1>
+            <p>就从这句开始吧</p>
+          </div>
+          
+          <div class="button-list">
+            <img
+              class="box-shadow"
+              :src="withBase('/imgs/zAo2nK.png')"
+              alt="个人图标"
+            />
+            <button class="box-shadow" @click="$router.push('/about/')">About</button>
+            <button class="box-shadow" @click="$router.push('/list/')">List</button>
+          </div>
+        </div>
+
+        <div class="home-slide slide-2">
+          <div class="left">
+            <p class="slide-header">
+              <img
+              :src="withBase('/imgs/zAocX6.png')"
+                alt="icon2"
+              />介绍
+            </p>
+            <p class="slide-text">
+              这是我的个人网站，
+              通过笔记的形式用来更新学习和工作中遇到的问题和有意思的项目，
+              之前使用 VuePress1.x 开发过一个版本<a href="https://github.com/fly-liu/blog-project" target="_blank">blog-project</a>，
+              这算是一次版本更新。
+              VuePress 是一个以 Markdown 为中心的静态网站生成器。
+              本项目中使用 VuePress 默认主题，
+              参照官方文档，该配置的基本上都配置过，
+              引入了一些相关插件，
+              开通 Giscus，引入了 github 评论
+              首页为自定义页面，感兴趣可以访问 github 下载自行浏览，
+              VuePress2.x 使用的 Vue3 + Typescript 语法进行开发。
+            </p>
+            <p class="slide-text">记录是学习的重要过程。如果不小心被各位看到了我的笔记并且从中有所收获，我将感到特别荣幸。</p>
+            <p class="slide-text">VuePress2.x 目前仍处于 beta 阶段，因此还不够稳定，可能在运行时会失败，要时常更新。</p>
+          </div>
+          <div class="right">
+            <img
+              class="box-shadow border-radius13"
+              :src="withBase('/imgs/zAoHjP.jpg')"
+              alt="个人照片"
+            />
+          </div>
+        </div>
+
+        <!-- <div class="home-slide slide-3">
+          <p class="slide-header">
+            <img
+              :src="withBase('/imgs/zAohAe.png')"
+              alt="icon2"
+            />自我介绍
+          </p>
+          <div class="slide-flex">
+            <div class="blog-flex-centered img-fixed box-shadow border-radius13">
+              <h3 class="blog-item">热爱</h3>
+              <div class="blog-item-content">
+                <p>热爱</p>
               </div>
             </div>
-
-            <div class="home-slide slide-2">
-              <div class="left">
-                <p class="slide-header">
-                  <img
-                  :src="withBase('/imgs/zAocX6.png')"
-                    alt="icon2"
-                  />介绍
-                </p>
-                <p class="slide-text">
-                  这是我的个人网站，
-                  通过笔记的形式用来更新学习和工作中遇到的问题和有意思的项目，
-                  之前使用 VuePress1.x 开发过一个版本<a href="https://github.com/fly-liu/blog-project" target="_blank">blog-project</a>，
-                  这算是一次版本更新。
-                  VuePress 是一个以 Markdown 为中心的静态网站生成器。
-                  本项目中使用 VuePress 默认主题，
-                  参照官方文档，该配置的基本上都配置过，
-                  引入了一些相关插件，
-                  开通 Giscus，引入了 github 评论
-                  首页为自定义页面，感兴趣可以访问 github 下载自行浏览，
-                  VuePress2.x 使用的 Vue3 + Typescript 语法进行开发。
-                </p>
-                <p class="slide-text">记录是学习的重要过程。如果不小心被各位看到了我的笔记并且从中有所收获，我将感到特别荣幸。</p>
-                <p class="slide-text">VuePress2.x 目前仍处于 beta 阶段，因此还不够稳定，可能在运行时会失败，要时常更新。</p>
-              </div>
-              <div class="right">
-                <img
-                  class="box-shadow border-radius13"
-                  :src="withBase('/imgs/zAoHjP.jpg')"
-                  alt="个人照片"
-                />
+            <div class="blog-flex-centered img-fixed box-shadow border-radius13">
+              <img
+                class="blog-item"
+                :src="withBase('/imgs/zAT9cq.png')"
+                alt="个人照片1"
+              />
+              <div class="blog-item-content">
+                <p>喜欢跑步</p>
               </div>
             </div>
-
-            <!-- <div class="home-slide slide-3">
-              <p class="slide-header">
-                <img
-                  :src="withBase('/imgs/zAohAe.png')"
-                  alt="icon2"
-                />自我介绍
-              </p>
-              <div class="slide-flex">
-                <div class="blog-flex-centered img-fixed box-shadow border-radius13">
-                  <h3 class="blog-item">热爱</h3>
-                  <div class="blog-item-content">
-                    <p>热爱</p>
-                  </div>
-                </div>
-                <div class="blog-flex-centered img-fixed box-shadow border-radius13">
-                  <img
-                    class="blog-item"
-                    :src="withBase('/imgs/zAT9cq.png')"
-                    alt="个人照片1"
-                  />
-                  <div class="blog-item-content">
-                    <p>喜欢跑步</p>
-                  </div>
-                </div>
-                <div class="blog-flex-centered img-fixed box-shadow border-radius13">
-                  <h3 class="blog-item">有责任感</h3>
-                  <div class="blog-item-content">
-                    <p>有责任感</p>
-                  </div>
-                </div>
-                <div class="blog-flex-centered img-fixed box-shadow border-radius13">
-                  <img
-                    class="blog-item"
-                    :src="withBase('/imgs/zATp3n.png')"
-                    alt="个人照片2"
-                  />
-                  <div class="blog-item-content">
-                    <p>喜欢旅游</p>
-                  </div>
-                </div>
-                <div class="blog-flex-centered img-fixed box-shadow border-radius13">
-                  <h3 class="blog-item">认真</h3>
-                  <div class="blog-item-content">
-                    <p>认真工作</p>
-                  </div>
-                </div>
-                
-              </div>
-            </div> -->
-
-            <!-- <div class="home-slide slide-4">
-              <p class="slide-header">
-                <img
-                  :src="withBase('/imgs/zAoT1I.png')"
-                  alt="icon2"
-                />参与的项目
-              </p>
-              <div class="slide-wrapper" v-for="(works,index) in worksList" :key="index">
-                <div class="slide-flex">
-                  <img
-                    v-for="(imageObj,key) in works.images"
-                    class="img-item box-shadow"
-                    :key="key"
-                    :src="withBase(imageObj.src)"
-                    :alt="imageObj.alt"
-                    referrerpolicy="no-referrer"
-                  />
-                  </div>
-                <h3 class="slide-title">{{works.header}}</h3>
-                <p
-                  class="slide-text"
-                >项目说明：{{works.desc}}</p>
-                <p class="slide-text">使用技术：{{works.text}}</p>
-              </div>
-            </div> -->
-
-            <!-- <div class="home-slide slide-5">
-              <p class="slide-header">
-                <img
-                  :src="withBase('/imgs/zAoT1I.png')"
-                  alt="icon2"
-                />历史记录
-              </p>
-              <p class="slide-text">做过UI，写过代码</p>
-              <p class="slide-text">闲时设计的几张图。</p>
-
-              <div class="slide-flex">
-                <img
-                  class="img-item box-shadow border-radius13"
-                  :src="withBase('/imgs/zAoqnf.png')"
-                  alt="img"
-                />
-                <img
-                  class="img-item box-shadow border-radius13"
-                  :src="withBase('/imgs/zAoLB8.png')"
-                  alt="img"
-                />
-                <img
-                  class="img-item box-shadow border-radius13"
-                  :src="withBase('/imgs/zAoOHS.png')"
-                  alt="img"
-                />
-                <img
-                  class="img-item box-shadow border-radius13"
-                  :src="withBase('/imgs/zAovNQ.png')"
-                  alt="img"
-                />
-              </div>
-            </div> -->
-
-            <div class="home-slide footer">
-              <div class="footer-left">
-                <div class="content-item">
-                  <div class="item-icon-box">
-                    <span class="item-icon1"></span>
-                  </div>
-                  <p>1099983219@qq.com</p>
-                </div>
-                <div class="content-item">
-                  <div class="item-icon-box">
-                    <span class="item-icon2"></span>
-                  </div>
-                  <p>15201839521</p>
-                </div>
-              </div>
-              <div class="footer-right">
-                <img
-                  class="qr-img"
-                  :src="withBase('/imgs/Hf7ab919c1fab4fc79d8d214c984c2be6W.jpg')"
-                  alt="qrcode"
-                />
+            <div class="blog-flex-centered img-fixed box-shadow border-radius13">
+              <h3 class="blog-item">有责任感</h3>
+              <div class="blog-item-content">
+                <p>有责任感</p>
               </div>
             </div>
+            <div class="blog-flex-centered img-fixed box-shadow border-radius13">
+              <img
+                class="blog-item"
+                :src="withBase('/imgs/zATp3n.png')"
+                alt="个人照片2"
+              />
+              <div class="blog-item-content">
+                <p>喜欢旅游</p>
+              </div>
+            </div>
+            <div class="blog-flex-centered img-fixed box-shadow border-radius13">
+              <h3 class="blog-item">认真</h3>
+              <div class="blog-item-content">
+                <p>认真工作</p>
+              </div>
+            </div>
+            
+          </div>
+        </div> -->
+
+        <!-- <div class="home-slide slide-4">
+          <p class="slide-header">
+            <img
+              :src="withBase('/imgs/zAoT1I.png')"
+              alt="icon2"
+            />参与的项目
+          </p>
+          <div class="slide-wrapper" v-for="(works,index) in worksList" :key="index">
+            <div class="slide-flex">
+              <img
+                v-for="(imageObj,key) in works.images"
+                class="img-item box-shadow"
+                :key="key"
+                :src="withBase(imageObj.src)"
+                :alt="imageObj.alt"
+                referrerpolicy="no-referrer"
+              />
+              </div>
+            <h3 class="slide-title">{{works.header}}</h3>
+            <p
+              class="slide-text"
+            >项目说明：{{works.desc}}</p>
+            <p class="slide-text">使用技术：{{works.text}}</p>
+          </div>
+        </div> -->
+
+        <!-- <div class="home-slide slide-5">
+          <p class="slide-header">
+            <img
+              :src="withBase('/imgs/zAoT1I.png')"
+              alt="icon2"
+            />历史记录
+          </p>
+          <p class="slide-text">做过UI，写过代码</p>
+          <p class="slide-text">闲时设计的几张图。</p>
+
+          <div class="slide-flex">
+            <img
+              class="img-item box-shadow border-radius13"
+              :src="withBase('/imgs/zAoqnf.png')"
+              alt="img"
+            />
+            <img
+              class="img-item box-shadow border-radius13"
+              :src="withBase('/imgs/zAoLB8.png')"
+              alt="img"
+            />
+            <img
+              class="img-item box-shadow border-radius13"
+              :src="withBase('/imgs/zAoOHS.png')"
+              alt="img"
+            />
+            <img
+              class="img-item box-shadow border-radius13"
+              :src="withBase('/imgs/zAovNQ.png')"
+              alt="img"
+            />
+          </div>
+        </div> -->
+
+        <div class="home-slide footer">
+          <div class="footer-left">
+            <div class="content-item">
+              <div class="item-icon-box">
+                <span class="item-icon1"></span>
+              </div>
+              <p>1099983219@qq.com</p>
+            </div>
+            <div class="content-item">
+              <div class="item-icon-box">
+                <span class="item-icon2"></span>
+              </div>
+              <p>15201839521</p>
+            </div>
+          </div>
+          <div class="footer-right">
+            <img
+              class="qr-img"
+              :src="withBase('/imgs/Hf7ab919c1fab4fc79d8d214c984c2be6W.jpg')"
+              alt="qrcode"
+            />
           </div>
         </div>
         
@@ -321,15 +320,13 @@ function setMainHeight() {
 @import "../styles/reset.scss";
 .home-box {
   height: 100%;
-  .home-container {
-    height: 100%;
-  }
 
   .slide-header {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: $theme-font-size3;
+
     img {
       margin-right: 1.25rem;
       height: 2.125rem; // 34px
@@ -338,18 +335,13 @@ function setMainHeight() {
 
   .slide-title {
     margin: .625rem auto;
+
     &::before {
       content: '\25B2';
       display: inline-block;
       margin-right: .625rem;
       color: #8492a6;
       transform: scale(.8);
-      // border: 8px solid #8492a6;
-      // border-top-color: transparent;
-      // border-left-color: transparent;
-      // border-right-color: transparent;
-      // width: 0;
-      // height: 0;
     }
   }
 
@@ -368,6 +360,7 @@ function setMainHeight() {
     display: flex;
     flex-wrap: wrap;
     margin: 2.5rem 0 1.25rem;
+
     .img-item {
       margin: .96vw .96vw .96vw 0;
       max-width: 90vw;
@@ -383,10 +376,12 @@ function setMainHeight() {
       box-sizing: border-box;
       z-index: 1;
       cursor: pointer;
+
       &:hover {
         .blog-item {
           opacity: 0;
         }
+
         .blog-item-content {
           opacity: 1;
           transform: scale(1,1);
@@ -409,6 +404,7 @@ function setMainHeight() {
         transform: scale(1,0);
         transition: opacity .35s,transform .35s;
         opacity: 0;
+
         p {
           margin: .625rem;
         }
@@ -418,39 +414,60 @@ function setMainHeight() {
 
   .slide-1 {
     position: relative;
-    height: 94vh;
-    .bg {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      max-width: 100vw;
-      height: 28.125rem;
-      background: url(../public/imgs/zAoW7D.png) center no-repeat;
-      filter: var(--filter-invert-value);
-    }
+    height: 100vh;
+    
     .main {
       position: absolute;
-      top: 8%;
-      width: 100%;
+      top: 22%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 52%;
       text-align: center;
-      color: $theme-font-color;
+      color: var(--frist-text-color);
+
       h1 {
+        margin: 0;
         font-size: 8.75rem;
-        line-height: 0;
+        color: transparent;
+        // background: linear-gradient(45deg,#ff0000 0%,#ffb600 11%,#fff600 22%,#a5ff00 33%,#00a9ff 44%,#0400ff 55%,#8a00fc 66%,#ff00e9 77%,#ff0059 88%,#ff0000 100%);
+        background: linear-gradient(
+          45deg,
+        #ff0000 0%,#ff0000 11%,
+        #ffb600 11%,#ffb600 22%,
+        #fff600 22%,#fff600 33%,
+        #a5ff00 33%,#a5ff00 44%,
+        #00a9ff 44%,#00a9ff 55%,
+        #0400ff 55%,#0400ff 66%,
+        #8a00fc 66%,#8a00fc 77%,
+        #ff00e9 77%,#ff00e9 88%,
+        #ff0000 88%,#ff0000 100%);
+        // background:radial-gradient(
+        //   #ff0000 0%,#ff0000 11%,
+        //   #ffb600 11%,#ffb600 22%,
+        //   #fff600 22%,#fff600 33%,
+        //   #a5ff00 33%,#a5ff00 44%,
+        //   #00a9ff 44%,#00a9ff 55%,
+        //   #0400ff 55%,#0400ff 66%,
+        //   #8a00fc 66%,#8a00fc 77%,
+        //   #ff00e9 77%,#ff00e9 88%,
+        //   #ff0000 88%,#ff0000 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
       }
+
       p {
         font-size: $theme-font-size2;
         font-weight: 600;
       }
     }
+    
     .button-list {
       position: absolute;
       bottom: 4vh;
       margin-left: 2.5rem;
       display: flex;
+
       img,
       button {
         margin: 0 .625rem;
@@ -460,10 +477,11 @@ function setMainHeight() {
       }
 
       button {
-        border: 4px solid var(--black);
+        border: 4px solid var(--frist-text-color);
         font-size: .875rem;
         font-weight: 600;
         background: var(--white);
+
         &:hover {
           border-color: $theme-color;
           color: $theme-color;
@@ -474,10 +492,12 @@ function setMainHeight() {
 
   .slide-2 {
     display: flex;
+
     .left {
       padding: 0 0 6.25rem 0;
       width: 32%;
     }
+
     .right {
       flex: 1;
       text-align: right;
@@ -489,14 +509,14 @@ function setMainHeight() {
 
   .slide-3 {
     position: relative;
+
     .slide-icon {
       position: absolute;
       top: 15%;
       right: 10%;
       width: 5vw;
       height: 5vw;
-      background: url(../public/imgs/Hce60910694354ba2af75002b9a1460e6r.jpg)
-        no-repeat center center;
+      background: url(../public/imgs/Hce60910694354ba2af75002b9a1460e6r.jpg) no-repeat center center;
       background-size: contain;
     }
   }
@@ -506,6 +526,7 @@ function setMainHeight() {
       display: flex;
       width: 100%;
       justify-content: center;
+
       .img-item {
         margin: 10px;
         max-height: 350px;
@@ -518,6 +539,7 @@ function setMainHeight() {
     justify-content: space-around;
     align-items: center;
     background-color: var(--grey14);
+
     .footer-left {
       .content-item {
         display: flex;
@@ -530,6 +552,7 @@ function setMainHeight() {
           height: 2.8rem;
           background-color: var(--black);
         }
+
         .item-icon1 {
           display: inline-block;
           width: 100%;
@@ -537,6 +560,7 @@ function setMainHeight() {
           background: url(../public/imgs/zAojAg.png) no-repeat center center;
           filter: var(--filter-invert-value);
         }
+
         .item-icon2 {
           display: inline-block;
           width: 100%;
@@ -544,10 +568,12 @@ function setMainHeight() {
           background: url(../public/imgs/zAoxhj.png) no-repeat center center;
           filter: var(--filter-invert-value);
         }
+
         span {
           width: 2.5rem;
           height: 2.5rem;
         }
+
         p {
           margin-left: 1rem;
           color: var(--black);
@@ -555,6 +581,7 @@ function setMainHeight() {
         }
       }
     }
+    
     .footer-right {
       .qr-img {
         width: 116px;
@@ -568,6 +595,19 @@ function setMainHeight() {
   }
 }
 
+html.dark {
+  .home-box {
+    .slide-1 {
+      .main {
+        h1 {
+          color: var(--frist-text-color);
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+
 /**
  * 屏幕适配
  */
@@ -575,6 +615,7 @@ function setMainHeight() {
   .home-box {
     .slide-header {
       font-size: 1.5rem;
+
       img {
         margin-right: 0.5rem;
         height: 1.75rem;
