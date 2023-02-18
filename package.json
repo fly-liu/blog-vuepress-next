@@ -1,0 +1,23 @@
+{
+  "name": "blog-vuepress-next",
+  "version": "1.0.0",
+  "description": "个人博客网站，使用 Vuepress 构建",
+  "author": "freeman <1099983219@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "next",
+    "@vuepress/plugin-external-link-icon": "next",
+    "@vuepress/plugin-medium-zoom": "next",
+    "@vuepress/plugin-pwa": "next",
+    "@vuepress/plugin-pwa-popup": "next",
+    "@vuepress/plugin-search": "next",
+    "vuepress": "next",
+    "vuepress-plugin-comment2": "next",
+    "vuepress-plugin-sitemap2": "next"
+  }
+}
