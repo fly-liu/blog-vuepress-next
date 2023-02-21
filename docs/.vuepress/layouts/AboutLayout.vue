@@ -62,10 +62,8 @@ import Navbar from "@vuepress/theme-default/lib/client/components/Navbar.vue";
   }
 
   .info-window {
-    position: absolute;
-    // top: 30%;
-    // right: 10%;
-    margin: 0 0 0 18%;
+    position: relative;
+    margin: 0 0 30px 18%;
     color: var(--grey3);
     width: 50%;
     .item-title {
@@ -88,9 +86,6 @@ import Navbar from "@vuepress/theme-default/lib/client/components/Navbar.vue";
       width: 80%;
     }
     .info-window {
-      top: 3.5625rem;
-      left: 0;
-      right: 0;
       margin: 0 auto 60px;
       width: 88%;
       background: rgba(255,255,255,.8);
