@@ -126,12 +126,12 @@ export default {
     pwaPopupPlugin({
       locales: {
         '/': {
-          message: 'New content is available.',
-          buttonText: 'Refresh',
-        },
-        '/zh/': {
           message: '新的风暴已经出现',
           buttonText: '盘他',
+        },
+        '/en/': {
+          message: 'New content is available.',
+          buttonText: 'Refresh',
         },
       },
     }),
