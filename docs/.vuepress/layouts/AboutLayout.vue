@@ -23,7 +23,7 @@ import Navbar from "@vuepress/theme-default/lib/client/components/Navbar.vue";
       <p class="item-text">1099983219@qq.com</p>
       <h2></h2>
       <p class="item-title">爱好：</p>
-      <p class="item-text">喜欢跑步、游泳、羽毛球、养植物，一个人的时候喜欢找个咖啡店坐上一天，听听音乐研究一下代码，释放一下头脑风暴。</p>
+      <p class="item-text">曾经喜欢跑步、游泳、羽毛球、养植物，现在带娃。</p>
       
       <p class="item-title">个人评价：</p>
       <p class="item-text">做自己喜欢的事，自律，对事物保持新鲜感。</p>
