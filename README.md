@@ -3,10 +3,15 @@
 
 ## 安装依赖
 ```sh
-cnpm install
+npm install
 ```
 
-建议安装最新版本的依赖，否则可能在 build 时失败
+## 说明
+由于目前`VuePress`为`beta`版本，建议安装最新版本的依赖，否则可能在 build 时失败，但是最新版依赖的`node`为16.x；  
+
+本项目依赖的`node`版本为 14.x，因此防止安装报错，`npm`包使用的是固定版本号，如果需要安装最新版本的包，将`package.json`中 devDependencies 里依赖包版本号修改为`next`  
+
+或者在安装依赖时指定版本
 ```sh
 npm install -D vuepress@next @vuepress/plugin-back-to-top@next @vuepress/plugin-external-link-icon@next @vuepress/plugin-medium-zoom@next @vuepress/plugin-pwa@next @vuepress/plugin-pwa-popup@next @vuepress/plugin-search@next vuepress-plugin-comment2@next vuepress-plugin-sitemap2@next
 ```
