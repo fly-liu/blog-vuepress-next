@@ -85,37 +85,10 @@ const worksList = ref([
   }
 ])
 
-// onMounted(() => {
-//   setMainHeight()
-//   window.addEventListener('resize', setMainHeight, false);
-// })
-
-// onUnmounted(() => {
-//   window.removeEventListener('resize', setMainHeight, false)
-// })
-
-// function setMainHeight() {
-//   const navbar = document.querySelector('.navbar') as HTMLImageElement
-//   const slide1 = document.querySelector(".slide-1") as HTMLImageElement
-//   const offsetHeight = navbar ? navbar.offsetHeight : 0
-//   let wH = window.innerHeight; // 当前窗口的高度
-//   let mainHeight = wH - offsetHeight;
-  
-//   if(slide1) {
-//     slide1.style.height = mainHeight + "px";
-//   }
-  
-//   return mainHeight;
-// }
-
 // function toggleView(e) {
 //   showImg.value = true
 //   // 获取当前图片地址
 //   imgSrc.value = e.currentTarget.src
-// }
-
-// function viewImg() {
-//   showImg.value = false
 // }
 </script>
 
@@ -164,7 +137,7 @@ const worksList = ref([
               VuePress2.x 使用的 Vue3 + Typescript 语法进行开发。
             </p>
             <p class="slide-text">记录是学习的重要过程。如果不小心被各位看到了我的笔记并且从中有所收获，我将感到特别荣幸。</p>
-            <p class="slide-text">VuePress2.x 目前仍处于 beta 阶段，因此还不够稳定，可能在运行时会失败，要时常更新。</p>
+            <p class="slide-text">VuePress2.x 目前仍处于 beta 阶段，因此还不够稳定，可能在运行时会失败，要时常更新或者固定 package.json 中依赖的版本。</p>
           </div>
           <div class="right">
             <img
@@ -175,12 +148,12 @@ const worksList = ref([
           </div>
         </div>
 
-        <!-- <div class="home-slide slide-3">
+        <div class="home-slide slide-3">
           <p class="slide-header">
             <img
               :src="withBase('/imgs/zAohAe.png')"
               alt="icon2"
-            />自我介绍
+            />个人亮点
           </p>
           <div class="slide-flex">
             <div class="blog-flex-centered img-fixed box-shadow border-radius13">
@@ -223,7 +196,7 @@ const worksList = ref([
             </div>
             
           </div>
-        </div> -->
+        </div>
 
         <!-- <div class="home-slide slide-4">
           <p class="slide-header">
@@ -297,7 +270,7 @@ const worksList = ref([
               <div class="item-icon-box">
                 <span class="item-icon2"></span>
               </div>
-              <p>15201839521</p>
+              <p>XXX</p>
             </div>
           </div>
           <div class="footer-right">
@@ -310,7 +283,7 @@ const worksList = ref([
         </div>
         
         <!-- 放大图片 -->
-        <!-- <big-img v-if="showImg" @clickit="viewImg" :imgSrc="imgSrc"></big-img> -->
+        <!-- <big-img v-if="showImg" @clickit="showImg = false" :imgSrc="imgSrc"></big-img> -->
       </section>
     </template>
   </ParentLayout>

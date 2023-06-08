@@ -1,4 +1,4 @@
-import { Ilist } from '../index'
+import { Ilist } from './type'
 
 const counter = function (content) {
   const cn = (content.match(/[\u4E00-\u9FA5]/g) || []).length;

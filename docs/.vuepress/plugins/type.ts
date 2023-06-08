@@ -1,5 +1,5 @@
 import { PageFrontmatter } from '@vuepress/shared'
-interface Ilist {
+export interface Ilist {
   path: string,
   title: string,
   frontmatter: PageFrontmatter,

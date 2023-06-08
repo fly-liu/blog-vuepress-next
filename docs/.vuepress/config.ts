@@ -72,8 +72,8 @@ export default {
       ]
     },
     editLink: false, // 是否启用 编辑此页 链接
-    // lastUpdated: 'true', // 最后更新时间 boolean
-    // lastUpdatedText: '最后更新', // 最近更新时间戳 标签的文字
+    lastUpdatedText: '最后更新', // 最近更新时间戳 标签的文字
+    contributorsText: '贡献者', // 贡献者列表 标签的文字
   }),
   markdown: {
     code: {
