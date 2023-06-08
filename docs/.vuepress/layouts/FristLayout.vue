@@ -520,6 +520,9 @@ const worksList = ref([
         margin: 10px 0;
 
         .item-icon-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           border-radius: 50%;
           width: 2.8rem;
           height: 2.8rem;
