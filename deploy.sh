@@ -14,5 +14,5 @@ git config user.name "fly-liu"
 git config user.email "1099983219@qq.com"
 git add .
 git commit -m "deploy blog"
-git push git@github.com:fly-liu/fly-liu.github.io.git master
+git push -f git@github.com:fly-liu/fly-liu.github.io.git master
 cd -
