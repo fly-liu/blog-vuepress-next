@@ -332,6 +332,7 @@ const worksList = ref([
   .slide-flex {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 2.5rem 0 1.25rem;
 
     .img-item {
@@ -579,6 +580,13 @@ html.dark {
           color: var(--frist-text-color);
           background: transparent;
         }
+      }
+    }
+
+    .slide-flex {
+      .img-fixed {
+        color: #eee;
+        background: var(--c-text);
       }
     }
   }
