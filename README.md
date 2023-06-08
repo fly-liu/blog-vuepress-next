@@ -27,7 +27,7 @@ npm run docs:build
 ```
 
 ## 项目地址
-`https://github.com/fly-liu/blog-vuepress-next`
+`https://github.com/fly-liu/blog-vuepress-next/`
 
 ## 项目部署
 先生成静态资源，然后进入资源目录，将构建好的项目发布到 github 仓库

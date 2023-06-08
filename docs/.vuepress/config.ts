@@ -10,7 +10,7 @@ import { commentPlugin } from 'vuepress-plugin-comment2'
 import pagePlugin from './plugins/page'
 
 export default {
-  base: './', // 站点的基础路径
+  base: '/', // 站点的基础路径
   title: '刘哈哈的个人笔记',
   description: '记录 笔记 博客 git', // 网站描述
   // 被注入页面 HTML <head> 额外的标签
@@ -40,7 +40,7 @@ export default {
     }
   },
   theme: defaultTheme({
-    repo: 'https://github.com/fly-liu/blog-vuepress-next', // github链接
+    repo: 'https://github.com/fly-liu/blog-vuepress-next/', // github链接
     logo: '/imgs/zAo2nK.png', // 博客的 logo
     // 导航菜单
     navbar: [

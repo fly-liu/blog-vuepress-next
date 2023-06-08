@@ -126,7 +126,7 @@ const worksList = ref([
             <p class="slide-text">
               这是我的个人网站，
               通过笔记的形式用来更新学习和工作中遇到的问题和有意思的项目，
-              之前使用 VuePress1.x 开发过一个版本<a href="https://github.com/fly-liu/blog-project" target="_blank">blog-project</a>，
+              之前使用 VuePress1.x 开发过一个版本<a href="https://github.com/fly-liu/blog-project/" target="_blank">blog-project</a>，
               这算是一次版本更新。
               VuePress 是一个以 Markdown 为中心的静态网站生成器。
               本项目中使用 VuePress 默认主题，
